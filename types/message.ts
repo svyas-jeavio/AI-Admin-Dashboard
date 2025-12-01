@@ -8,4 +8,5 @@ export interface Message {
   role: MessageRole;
   type?: AssistantContentType; // only used for assistant
   content: string | object;
+  timestamp?: string | null; // ✅ optional + allows null
 }

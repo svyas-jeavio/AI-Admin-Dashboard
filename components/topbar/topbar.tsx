@@ -12,9 +12,9 @@ export default function TopBar() {
       {/* Left: Logo */}
       <div className="flex items-center gap-2 select-none">
         <div className="w-8 h-8 bg-white rounded-md flex items-center text-black justify-center text-xs font-bold">
-          M
+          K
         </div>
-        <span className="font-semibold text-sm tracking-wide">MyChatApp</span>
+        <span className="font-semibold text-sm tracking-wide">Kexa</span>
       </div>
 
       {/* Middle: Navigation */}

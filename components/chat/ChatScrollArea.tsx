@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Message } from "@/types/message";
 import AssistantMessage from "./AssistantMessage";
 import UserMessage from "./UserMessage";
@@ -13,6 +14,13 @@ export default function ChatScrollArea({
   messages: Message[];
   isLoading?: boolean;
 }) {
+  const bottomRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // smooth scroll to last message or tracing
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, isLoading]);
+
   return (
     <ScrollArea className="flex-1 p-6 space-y-4">
       {messages.map((msg) =>
@@ -22,7 +30,11 @@ export default function ChatScrollArea({
           <UserMessage key={msg.id} message={msg} />
         )
       )}
-      {isLoading && <ChatTracing />} {/* 👈 right below the last message */}
+
+      {isLoading && <ChatTracing />}
+
+      {/* 👇 anchor element to scroll to bottom */}
+      <div ref={bottomRef} />
     </ScrollArea>
   );
 }
