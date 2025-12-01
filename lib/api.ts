@@ -42,7 +42,13 @@ export async function sendChatMessage(
 ): Promise<Message> {
   const res = await fetch(
     `${CHAT_API}/chat?chat_id=${chatId}&query=${encodeURIComponent(query)}`,
-    { method: "GET", headers: { accept: "application/json" } }
+    {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        "ngrok-skip-browser-warning": "true",
+      },
+    }
   );
 
   if (!res.ok) throw new Error("Failed to get chat response");
