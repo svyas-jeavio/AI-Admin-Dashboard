@@ -33,20 +33,26 @@ export default function Login() {
       <Head>
         <title>Login</title>
       </Head>
+
       <div className="relative flex items-center justify-center min-h-screen px-4">
         <div className="absolute top-4 right-4 z-10">
           <ThemeToggle />
         </div>
 
         <div className="w-full max-w-sm space-y-6 text-center">
-          <h1 className="text-3xl font-semibold tracking-tight">Welcome</h1>
-          <p className="text-sm opacity-80">
-            Please log in or create an account
-          </p>
+          {/* KEXA heading */}
+          <h1 className="text-5xl tracking-[0.25em] font-light uppercase">
+            KEXA
+          </h1>
+
+          <p className="text-sm opacity-80">Your health companion</p>
+
           <div className="space-y-3">
             <a
-              className="block w-full px-4 py-2 font-medium text-black border border-gray-300 rounded-md bg-gray-100/70 hover:bg-gray-100 transition"
               href="/auth/login"
+              className="block w-full px-4 py-2 font-medium 
+        rounded-md bg-white/10 border border-white/20 
+        hover:bg-white/20 transition text-white"
             >
               Login / Signup
             </a>
